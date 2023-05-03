@@ -1,0 +1,138 @@
+.logo-container {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.logo-container img {
+    cursor: pointer;
+}
+
+nav a {
+    cursor: pointer;
+}
+
+nav a > * {
+    cursor: pointer;
+}
+
+.nav-group {
+    height: 100%;
+    position: relative;
+}
+
+.nav-items {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.content {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    transform: scale(1.09);
+}
+
+.share-code {
+    margin-top: 5%;
+}
+
+.window-content {
+    overflow: hidden;
+}
+
+.pane {
+    overflow: hidden;
+}
+
+.row {
+    margin-top: 5%;
+}
+
+.grey {
+    color: black;
+}
+
+.start-session {
+    float: right;
+}
+
+.illustration {
+    transform: scale(1);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.illustration:hover {
+    transform: scale(1.09);
+}
+
+input[type='text'] {
+    transform: scale(1);
+    transition: 0.3s ease;
+}
+
+input[type='text']:focus {
+    transform: scale(1.05);
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+}
+
+.error-msg {
+    color: red;
+    float: right;
+    font-size: medium;
+    display: none;
+}
+
+label {
+    width: 100%;
+}
+
+.share {
+    font-size: large;
+}
+
+#clipboard-icon {
+    float: right;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.users-container {
+    height: 200px;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.user-list-container {
+    overflow-y: visible;
+    overflow-x: hidden;
+    height: 50vh;
+}
+
+.users-list {
+    margin-top: 10%;
+}
+
+#share-screen {
+    display: none;
+}
+
+#settings-screen {
+    display: none;
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CodeShare</title>
+        <link rel="stylesheet" href="./css/photon.min.css" />
+        <link rel="stylesheet" href="./css/simple-grid.min.css" />
+        <link rel="stylesheet" href="./css/animate.min.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script defer src="./js/script.js"></script>
+    </head>
+    <body>
+        <div class="window">
+            <header class="toolbar toolbar-header">
+                <h1 class="title">
+                    CodeShare - <span id="screen-title">Home</span>
+                </h1>
+            </header>
+            <div class="window-content">
+                <div class="pane-group">
+                    <div class="pane-sm sidebar">
+                        <div class="logo-container">
+                            <img
+                                src="./favicon.ico"
+                                alt="app logo"
+                                width="50"
+                                height="50"
+                                class="illustration"
+                                id="app-logo"
+                            />
+                        </div>
+
+                        <nav class="nav-group">
+                            <div class="nav-items">
+                                <h5 class="nav-group-title">Sessions</h5>
+                                <a
+                                    class="nav-group-item link"
+                                    id="create-session"
+                                >
+                                    <span class="icon icon-list-add"></span>
+                                    Create
+                                </a>
+                                <a
+                                    class="nav-group-item link"
+                                    id="join-session"
+                                >
+                                    <span class="icon icon-user-add"></span>
+                                    Join
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="pane"></div>
+                </div>
+            </div>
+            <footer class="toolbar toolbar-footer">
+                <h1 class="title">Copyright © 2023 - CodeShare</h1>
+            </footer>
+        </div>
+
+        <template id="home-screen">
+            <div class="animate__animated animate__fadeIn">
+                <div class="content">
+                    <h1 class="grey">
+                        Share Code
+                    </h1>
+                    <h3 class="grey">
+                        Сұхбат, ақаулықтарды жою, оқыту және т. б. үшін Онлайн код редакторы …
+                    </h3>
+
+                    <button
+                        class="btn share-code btn-large btn-positive"
+                        id="create-session"
+                    >
+                        <span
+                            class="icon icon-share"
+                            style="margin-right: 5px; color: white"
+                        ></span>
+                        Share Code Now
+                    </button>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <h3 class="grey">Code with your team</h3>
+                        <p class="grey">
+                            Codeshare редакторын ашып, кодты жазыңыз немесе көшіріңіз, содан кейін оны достарыңызбен және әріптестеріңізбен бөлісіңіз. Жұптық бағдарлама және ақауларды бірге шешіңіз.
+                        </p>
+                        <button
+                            class="btn btn-large btn-default"
+                            id="create-session"
+                        >
+                            <span
+                                class="icon icon-github"
+                                style="margin-right: 5px"
+                            ></span>
+                            Hack Together
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="grey">Interview developers</h3>
+                        <p class="grey">
+                            Кодтау тапсырмаларын орнатыңыз және нақты уақытта бақылаңыз қашықтан немесе жеке сұхбат. Ешкімге ұнамайды  ақ тақтаға код жазу.
+                        </p>
+                        <button
+                            class="btn btn-large btn-default"
+                            id="create-session"
+                        >
+                            <span
+                                class="icon icon-monitor"
+                                style="margin-right: 5px"
+                            ></span>
+                            Start An Interview
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="grey">Teach people to program</h3>
+                        <p class="grey">
+                            Кодты студенттермен және құрдастарымен бөлісіңіз, содан кейін оқытыңыз олар. Дүние жүзіндегі университеттер мен колледждер пайдаланады Күн сайын Codeshare.
+                        </p>
+                        <button
+                            class="btn btn-large btn-default"
+                            id="create-session"
+                        >
+                            <span
+                                class="icon icon-graduation-cap"
+                                style="margin-right: 5px"
+                            ></span>
+                            Teach Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="create-screen">
+            <div class="animate__animated animate__fadeIn">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="grey">
+                            <span
+                                class="icon icon-record"
+                                style="margin-right: 10px; color: #34c84a"
+                            ></span
+                            >New Session
+                        </h2>
+                    </div>
+                </div>
+                <div>
+                    <form action="./session.html">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="user-name" class="grey">
+                                        <span
+                                            class="icon icon-user grey"
+                                            style="margin-right: 5px"
+                                        >
+                                        </span
+                                        >User Name
+                                        <span
+                                            id="username-error"
+                                            class="error-msg"
+                                            >** Please enter a user name
+                                            **</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="user-name"
+                                        class="form-control"
+                                        name="userName"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="session-id" class="grey"
+                                        ><span
+                                            class="icon icon-key grey"
+                                            style="margin-right: 5px"
+                                        ></span
+                                        >Session ID
+                                        <span
+                                            id="session-error"
+                                            class="error-msg"
+                                            >** Please enter a session id
+                                            **</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="session-id"
+                                        class="form-control"
+                                        name="sessionId"
+                                        readonly
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button
+                                    class="
+                                        btn btn-large btn-positive
+                                        start-session
+                                    "
+                                >
+                                    <span
+                                        class="icon icon-plus"
+                                        style="margin-right: 5px; color: white"
+                                    ></span>
+                                    Create Session
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <center>
+                    <div class="row">
+                        <div class="col-4">
+                            <img
+                                src="./images/undraw_real_time_collaboration_c62i.svg"
+                                width="200"
+                                height="200"
+                                class="illustration"
+                                alt="Real-time coding illustration"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <img
+                                src="./images/undraw_programming_2svr.svg"
+                                width="200"
+                                height="200"
+                                class="illustration"
+                                alt="Programming illustration"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <img
+                                src="./images/undraw_accept_tasks_po1c.svg"
+                                width="200"
+                                height="200"
+                                class="illustration"
+                                alt="Features illustration"
+                            />
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </template>
+
+        <template id="join-screen">
+            <div class="animate__animated animate__fadeIn">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="grey">
+                            <span
+                                class="icon icon-record _grey"
+                                style="margin-right: 10px; color: #fdbc40"
+                            ></span
+                            >Join Session
+                        </h2>
+                    </div>
+                </div>
+                <div>
+                    <form action="./session.html">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="user-name" class="grey">
+                                        <span
+                                            class="icon icon-user grey"
+                                            style="margin-right: 5px"
+                                        >
+                                        </span
+                                        >User Name
+                                        <span
+                                            id="username-error"
+                                            class="error-msg"
+                                            >** Please enter a user name
+                                            **</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="user-name"
+                                        class="form-control"
+                                        name="userName"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="session-id" class="grey"
+                                        ><span
+                                            class="icon icon-key grey"
+                                            style="margin-right: 5px"
+                                        ></span
+                                        >Session ID
+                                        <span
+                                            id="session-error"
+                                            class="error-msg"
+                                            >** Please enter a session id
+                                            **</span
+                                        ></label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="session-id"
+                                        class="form-control"
+                                        name="sessionId"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button
+                                    class="
+                                        btn btn-large btn-positive
+                                        start-session
+                                    "
+                                >
+                                    <span
+                                        class="icon icon-retweet"
+                                        style="margin-right: 5px; color: white"
+                                    ></span>
+                                    Join Session
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <center>
+                    <div class="row">
+                        <div class="col-4">
+                            <img
+                                src="./images/undraw_real-time_sync_o57k.svg"
+                                width="200"
+                                height="200"
+                                class="illustration"
+                                alt="Real-time coding illustration"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <img
+                                src="./images/undraw_pair_programming_njlp.svg"
+                                width="200"
+                                height="200"
+                                class="illustration"
+                                alt="Programming illustration"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <img
+                                src="./images/undraw_Hacker_mindset_re_8a33.svg"
+                                width="200"
+                                height="200"
+                                class="illustration"
+                                alt="Features illustration"
+                            />
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </template>
+    </body>
+</html>
